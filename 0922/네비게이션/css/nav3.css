@@ -8,7 +8,7 @@ nav{
     text-align: center;
     position: relative;
 }
-nav .gnb{
+ nav .gnb{
     width: 100%;
     height: 50px;
     background-color: #ccc;
@@ -16,6 +16,7 @@ nav .gnb{
     overflow: hidden;
     transition: all 0.3s;
 }
+    
 nav .gnb:hover{
     height: 250px;
 }
@@ -31,4 +32,4 @@ nav .gnb:hover{
     height: 50px;
     line-height: 50px;
 
-}
+} 
