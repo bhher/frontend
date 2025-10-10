@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
 <style>
 *{margin: 0;padding: 0;}
 ul, li{list-style: none;}
@@ -53,27 +53,37 @@ body{background-color: #333;}
 </body>
 </html>
 <script>
-const navLinks = document.querySelectorAll("#nav li a"); //8등록
-navLinks.forEach(function(navLink){
-    navLink.addEventListener("click",function(e){
-        e.preventDefault(); //a 이벤트를 막아서 링크금지
-        //작은 이미지 클릭스 팝업이동을 방지
+// const navLinks = document.querySelectorAll("#nav li a"); //8등록
+// navLinks.forEach(function(navLink){
+//     navLink.addEventListener("click",function(e){
+//         e.preventDefault(); //a 이벤트를 막아서 링크금지
+//         //작은 이미지 클릭스 팝업이동을 방지
 
-       let img_url =  navLink.getAttribute('href'); //a 주소값(큰이미지)
-       // alert(img_url);
-       document.querySelector("#window img").setAttribute('src',img_url);
-        navLinks.forEach(function(link){
-            link.classList.remove('active'); //active 를 모든 a 제거
-        });
-        navLink.classList.add('active');
+//        let img_url =  navLink.getAttribute('href'); //a 주소값(큰이미지)
+//        // alert(img_url);
+//        document.querySelector("#window img").setAttribute('src',img_url);
+//         navLinks.forEach(function(link){
+//             link.classList.remove('active'); //active 를 모든 a 제거
+//         });
+//         navLink.classList.add('active');
 
+//     });
+
+// });
+
+$(function(){
+    $("#nav li a").click(function(){
+       
+        var img_url = $(this).attr('href'); //현재 href 들어있는 속성값을 읽어서 img_url 저장
+        //alert(img_url);
+        $('#window img').attr('src',img_url );
+        $("#nav li a").removeClass('active');
+        $(this).addClass('active');
+
+        return false;
     });
 
+
 });
-
-
-
-
-
 
 </script>
