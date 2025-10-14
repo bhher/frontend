@@ -23,7 +23,7 @@ $(function(){
 
         },3000);
     }
-timer();
+ timer();
 
     function move(){
         if(current == i) return;

@@ -29,8 +29,8 @@
 <script>
 $(function(){
     $('.tab li').click(function(){
-       var i =  $(this).index();
-       // alert(i);
+       var i =  $(this).index();//클릭한 인덱스 번호구하기
+        //alert(i);
        $('.tab li').removeClass('on');
        $('.tab li').eq(i).addClass('on');
        $('.tab_list div').removeClass('on');
