@@ -12,6 +12,7 @@ function App() {
          <div className="buttons">
           <button className='btn' onClick={()=>setCount(count+1)}>+1증가</button>
           <button className='btn' onClick={()=>setCount(count-1)}>+1감소</button>
+        {/*  */}
         </div>
     </div>
   );
