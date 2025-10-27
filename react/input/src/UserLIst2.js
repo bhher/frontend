@@ -1,7 +1,8 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import User from './User'
-export default function UserLIst2({users}) {
+export default function UserLIst2({users, onRemove,onToggle}) {
     
+
 
   return (
     <div>
@@ -9,7 +10,7 @@ export default function UserLIst2({users}) {
       <User user={users[1]}/>
       <User user={users[2]}/> */}
       {users.map(user=>(
-        <User user={user} key={user.id} />
+        <User user={user} key={user.id} onRemove={onRemove} onToggle={onToggle} />
       ))}
     </div>
   )

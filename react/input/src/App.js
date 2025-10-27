@@ -22,17 +22,20 @@ const [inputs, setInputs] = useState({
     {
       id: 1,
       username: 'velopert',
-      email: 'public.velopert@gmail.com'
+      email: 'public.velopert@gmail.com',
+      active:true
     },
     {
       id: 2,
       username: 'tester',
-      email: 'tester@example.com'
+      email: 'tester@example.com', 
+      active:false
     },
     {
       id: 3,
       username: 'liz',
-      email: 'liz@example.com'
+      email: 'liz@example.com',
+      active:false
     }
   ]);
 
@@ -54,8 +57,33 @@ const [inputs, setInputs] = useState({
     nextId.current += 1; //다음 id 증가
   };
 
+  const onRemove = id =>{
+    //user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듦
+     // = user.id 가 id 인 것을 제거함
+    setUsers(users.filter(user => user.id !== id));
+  }
+
+  const onToggle = id =>{
+    //1. setUser를 호출하여 users 상태 업데이트 시작
+    setUsers(
+      //2. 기존의 users 배열을 순하여 새로운 배열 생성
+      users.map(user =>
+        //3. 현재 순회중인 user.id 가 전달받은 id가 일치하는지 확인
+        user.id ===id ? {...user, active : !user.active } : user
+     )
+    )
+  }
+   //일치하면(O) 해당 user 객체의 active 속성만 토글하여 새로운 객체를 생성 
+    //일치하지 않으면(X) 해당 user객체는 그대로 반환
+    //  active : !user.active   -> active 값을 반대로 뒤집기 true -> false 로 false -> true
+
+ 
+
+
   return (
     <div>
+     
+
        <CreateUser
         username={username}
         email={email}
@@ -63,7 +91,11 @@ const [inputs, setInputs] = useState({
         onCreate={onCreate}
         //함수전달
       />
-      <UserLIst2 users={users}/>
+
+      {/* <UserLIst2 users={users} onRemove={onRemove} onToggle={onToggle} /> */}
+    
+        <UserLIst2 users={users} onRemove={onRemove} onToggle={onToggle} />
+  
     </div>
   )
 }
