@@ -33,8 +33,12 @@ export default function Navbar() {
                 key={item.to}
                 to={item.to}
                 onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) => `nav-button ${isActive ? "active" : ""}`}
+                className={({ isActive }) =>
+                  `nav-button ${isActive ? "active" : ""}`
+                }
               >
+                {/*isActive   ==true 현재 페이지와 같으면 'active'클래스 추가  */}
+                {/* 글자색 보라색 밑줄 보라색 */}
                 {item.label}
               </NavLink>
             ))}
@@ -59,7 +63,9 @@ export default function Navbar() {
                   key={item.to}
                   to={item.to}
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) => `mobile-nav-button ${isActive ? "active" : ""}`}
+                  className={({ isActive }) =>
+                    `mobile-nav-button ${isActive ? "active" : ""}`
+                  }
                 >
                   {item.label}
                 </NavLink>
