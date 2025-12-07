@@ -1,0 +1,5 @@
+{
+  "name": "Doosan Robotics Clone",
+  "description": "A high-fidelity recreation of the Doosan Robotics homepage featuring responsive design, interactive product showcases, and a modern industrial aesthetic using React and Tailwind CSS.",
+  "requestFramePermissions": []
+}
